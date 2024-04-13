@@ -11,6 +11,8 @@ on:
   create:
     tags:
       - v*
+  workflow_dispatch:
+    branches: [ master ]
 
 jobs:
   build:
