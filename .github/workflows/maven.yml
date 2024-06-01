@@ -40,5 +40,4 @@ jobs:
         draft: true
         generate_release_notes: true
         files: |
-          **/target/ChestsPlusPlus-*.jar
-
+          ./ChestsPlusPlus_Main/target/ChestsPlusPlus-Master-*.jar
