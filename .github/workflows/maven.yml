@@ -32,12 +32,14 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
               
-    - name: Upload Release Asset
-      id: upload-release-asset 
-      uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/v')
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v2
       with:
-        draft: true
-        generate_release_notes: true
+        name: ChestsPlusPlus-JAR
+        path: ./ChestsPlusPlus_Main/target/ChestsPlusPlus-Master-*.jar
+
+    - name: Upload Release Asset
+      uses: actions/upload-artifact@v2
+      with:
         files: |
-          ./ChestsPlusPlus_Main/target/ChestsPlusPlus-Master-*.jar
+          ./Server/plugins/ChestsPlusPlus-*.jar
